@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 01:28:34 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/04/30 02:55:39 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/05/06 04:47:59 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "libft/libft.h"
 #include "push_swap.h"
 
-bool make_stacks(int n_nbrs, char **strs, t_intlist *node_arr, t_stacks *stacks);
-void	push_swap(t_stacks *stacks);
+void	push_swap(t_stacks *stacks, int size);
 
 int main(int argc, char **argv)
 {
@@ -33,9 +32,9 @@ int main(int argc, char **argv)
 		err = true;
 	if (node_arr != NULL)
 	{
-		err = !make_stacks(argc - 1, &argv[1], &stacks);
+		err = !make_stacks(argc - 1, &argv[1], node_arr, &stacks);
 		if (!err)
-			push_swap(&stacks);
+			push_swap(&stacks, argc - 1);
 		free(node_arr);
 	}
 	if (err)
@@ -43,26 +42,9 @@ int main(int argc, char **argv)
 	return (0);
 }
 
-bool make_stacks(int n_nbrs, char **strs, t_intlist *node_arr, t_stacks *stacks)
+void	push_swap(t_stacks *stacks, int size)
 {
-	int	i;
-	int	n;
-
-	i = 0;
-	while (i < n_nbrs)
-	{
-		if (!ft_strtoi(strs[i], &n))
-			return (false);
-		node_arr[i].data = n;
-		if (i > 0)
-			node_arr[i].next = &node_arr[i - 1];
-		++i;
-	}
-	stacks->a = &node_arr[n_nbrs - 1];
-	stacks->b = NULL;
-}
-
-void	push_swap(t_stacks *stacks)
-{
-
+	/* stacks_print(&stacks->a, &stacks->b); */
+	f(&stacks->a, &stacks->b, size, true);
+	/* stacks_print(&stacks->a, &stacks->b); */
 }

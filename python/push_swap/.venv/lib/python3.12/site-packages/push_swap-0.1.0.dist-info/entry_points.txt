@@ -1,0 +1,2 @@
+[console_scripts]
+push_swap = push_swap.main:main
