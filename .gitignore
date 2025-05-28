@@ -5,3 +5,4 @@ tests/test
 __pycache__
 .cache
 python/.venv
+*egg-info
