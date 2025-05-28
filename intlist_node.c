@@ -1,16 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo1.c                                            :+:      :+:    :+:   */
+/*   intlist_node.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 01:29:40 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/27 22:16:44 by dmontesd         ###   ########.fr       */
+/*   Created: 2025/05/27 21:26:06 by dmontesd          #+#    #+#             */
+/*   Updated: 2025/05/27 21:47:17 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include "push_swap.h"
+#include "intlist.h"
+#include "libft/libft.h"
 
-void split_then_insert(stacks)
+void	intlist_node_make(t_intlist_node *node, int n)
+{
+	ft_memset(node, 0, sizeof(t_intlist_node));
+	node->data = n;
+}
+

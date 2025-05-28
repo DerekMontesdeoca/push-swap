@@ -1,0 +1,6 @@
+*.o
+*.gch
+push_swap
+tests/test
+__pycache__
+.cache

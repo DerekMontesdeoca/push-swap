@@ -1,0 +1,20 @@
+[
+  {
+    "arguments": [
+      "/home/demont93/.local/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g3",
+      "-I..",
+      "-I../libft/include",
+      "-c",
+      "-o",
+      "test.o",
+      "test.c"
+    ],
+    "directory": "/home/demont93/Projects/push-swap/tests",
+    "file": "/home/demont93/Projects/push-swap/tests/test.c",
+    "output": "/home/demont93/Projects/push-swap/tests/test.o"
+  }
+]

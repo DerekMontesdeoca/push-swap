@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo1.c                                            :+:      :+:    :+:   */
+/*   swap_ops.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 01:29:40 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/27 22:16:44 by dmontesd         ###   ########.fr       */
+/*   Created: 2025/05/27 19:41:30 by dmontesd          #+#    #+#             */
+/*   Updated: 2025/05/27 19:43:24 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "push_swap.h"
 
-void split_then_insert(stacks)
+bool	pa(t_push_swap *ps)
+{
+}
+
+
+
+bool	pb(t_push_swap *ps)
+{
+
+}
