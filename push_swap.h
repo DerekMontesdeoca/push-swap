@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 02:52:10 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/28 05:36:16 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/05/29 03:09:03 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdbool.h>
 # include <stddef.h>
 # include "intlist.h"
+# include "map.h"
 
 typedef enum e_op
 {
@@ -57,12 +58,16 @@ typedef struct s_push_swap
 	t_intlist		b;
 	t_op_vector 	ops;
 	int				*sorted_numbers;
+	t_map			indices;
 	t_intlist_node	*nodes;
+	size_t			n_numbers;
 }	t_push_swap;
 
-bool	push_swap_make(t_push_swap *ps, int	*numbers);
+bool	push_swap_make(t_push_swap *ps, int	*numbers, size_t size);
 
 void	push_swap_destroy_contents(t_push_swap *ps);
+
+void	push_swap_print(t_push_swap *ps);
 
 void	push_swap_pa(t_push_swap *ps);
 

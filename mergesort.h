@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intlist_node.c                                     :+:      :+:    :+:   */
+/*   mergesort.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 21:26:06 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/28 18:25:24 by dmontesd         ###   ########.fr       */
+/*   Created: 2025/05/28 18:42:16 by dmontesd          #+#    #+#             */
+/*   Updated: 2025/05/28 19:05:41 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "intlist.h"
-#include "libft/libft.h"
+#ifndef MERGESORT_H
+# define MERGESORT_H
 
-void	intlist_node_make(t_intlist_node *node, int32_t n)
-{
-	ft_memset(node, 0, sizeof(t_intlist_node));
-	node->data = n;
-}
+# include <stdint.h>
+# include <stddef.h>
+# include <stdbool.h>
 
+bool	mergesort(int32_t *src, int32_t *dest, size_t size);
+
+#endif

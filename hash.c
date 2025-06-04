@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intlist_node.c                                     :+:      :+:    :+:   */
+/*   hash.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 21:26:06 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/28 18:25:24 by dmontesd         ###   ########.fr       */
+/*   Created: 2025/05/30 14:08:17 by dmontesd          #+#    #+#             */
+/*   Updated: 2025/05/30 14:09:56 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "intlist.h"
-#include "libft/libft.h"
+#include <stdint.h>
 
-void	intlist_node_make(t_intlist_node *node, int32_t n)
+uint32_t	hash(uint32_t n)
 {
-	ft_memset(node, 0, sizeof(t_intlist_node));
-	node->data = n;
+	n = (n ^ 61) ^ (n >> 16);
+	n = n + (n << 3);
+	n = n ^ (n >> 4);
+	n = n * 0x27d4eb2d;
+	n = n ^ (n >> 15);
+	return (n);
 }
-

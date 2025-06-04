@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intlist_node.c                                     :+:      :+:    :+:   */
+/*   solution.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 21:26:06 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/28 18:25:24 by dmontesd         ###   ########.fr       */
+/*   Created: 2025/05/29 21:43:31 by dmontesd          #+#    #+#             */
+/*   Updated: 2025/05/31 16:33:00 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "intlist.h"
-#include "libft/libft.h"
+#ifndef SOLUTION_H
+# define SOLUTION_H
 
-void	intlist_node_make(t_intlist_node *node, int32_t n)
-{
-	ft_memset(node, 0, sizeof(t_intlist_node));
-	node->data = n;
-}
+# include "push_swap.h"
 
+bool	split_then_insert(t_push_swap *ps);
+
+#endif

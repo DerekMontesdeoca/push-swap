@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 21:04:44 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/28 05:21:14 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/05/28 18:25:13 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 # define INTLIST_H
 
 # include <stddef.h>
+# include <stdint.h>
 
 typedef struct s_intlist_node
 {
-	int						data;
+	int32_t					data;
 	struct s_intlist_node	*next;
 	struct s_intlist_node	*prev;
 }	t_intlist_node;
 
-void			intlist_node_make(t_intlist_node *node, int n);
+void			intlist_node_make(t_intlist_node *node, int32_t n);
 
 typedef struct s_intlist
 {

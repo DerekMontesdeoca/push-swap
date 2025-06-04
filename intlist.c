@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 21:13:46 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/28 04:28:26 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/05/28 21:38:50 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ void	intlist_swap(t_intlist *lst)
 		temp->prev->next = temp;
 		temp->next = lst->head;
 		temp->next->prev = temp;
+		lst->head = lst->head->prev;
 	}
 }

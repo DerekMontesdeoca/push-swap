@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intlist_node.c                                     :+:      :+:    :+:   */
+/*   cmp.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 21:26:06 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/28 18:25:24 by dmontesd         ###   ########.fr       */
+/*   Created: 2025/06/03 02:24:17 by dmontesd          #+#    #+#             */
+/*   Updated: 2025/06/03 03:15:33 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "intlist.h"
-#include "libft/libft.h"
+#ifndef CMP_H
+# define CMP_H
 
-void	intlist_node_make(t_intlist_node *node, int32_t n)
-{
-	ft_memset(node, 0, sizeof(t_intlist_node));
-	node->data = n;
-}
+# include <stdint.h>
+# include <stddef.h>
 
+typedef int	(*t_cmp_func)(void *, void *);
+
+int		int32_t_cmp(void *a, void *b);
+
+int		size_t_cmp(void *a, void *b);
+
+void	*max(void *arr, size_t nmemb, size_t size, t_cmp_func cmp);
+
+void	*min(void *arr, size_t nmemb, size_t size, t_cmp_func cmp);
+
+size_t	min_index(void *arr, size_t nmemb, size_t size, t_cmp_func cmp);
+
+#endif

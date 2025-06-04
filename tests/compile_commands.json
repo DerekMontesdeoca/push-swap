@@ -16,5 +16,95 @@
     "directory": "/home/demont93/Projects/push-swap/tests",
     "file": "/home/demont93/Projects/push-swap/tests/test.c",
     "output": "/home/demont93/Projects/push-swap/tests/test.o"
+  },
+  {
+    "arguments": [
+      "/home/demont93/.local/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g3",
+      "-I..",
+      "-I../libft/include",
+      "-c",
+      "-o",
+      "../intlist.o",
+      "../intlist.c"
+    ],
+    "directory": "/home/demont93/Projects/push-swap/tests",
+    "file": "/home/demont93/Projects/push-swap/intlist.c",
+    "output": "/home/demont93/Projects/push-swap/intlist.o"
+  },
+  {
+    "arguments": [
+      "/home/demont93/.local/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g3",
+      "-I..",
+      "-I../libft/include",
+      "-c",
+      "-o",
+      "../intlist_node.o",
+      "../intlist_node.c"
+    ],
+    "directory": "/home/demont93/Projects/push-swap/tests",
+    "file": "/home/demont93/Projects/push-swap/intlist_node.c",
+    "output": "/home/demont93/Projects/push-swap/intlist_node.o"
+  },
+  {
+    "arguments": [
+      "/home/demont93/.local/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g3",
+      "-I..",
+      "-I../libft/include",
+      "-c",
+      "-o",
+      "../mergesort.o",
+      "../mergesort.c"
+    ],
+    "directory": "/home/demont93/Projects/push-swap/tests",
+    "file": "/home/demont93/Projects/push-swap/mergesort.c",
+    "output": "/home/demont93/Projects/push-swap/mergesort.o"
+  },
+  {
+    "arguments": [
+      "/home/demont93/.local/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g3",
+      "-I..",
+      "-I../libft/include",
+      "-c",
+      "-o",
+      "../push_swap.o",
+      "../push_swap.c"
+    ],
+    "directory": "/home/demont93/Projects/push-swap/tests",
+    "file": "/home/demont93/Projects/push-swap/push_swap.c",
+    "output": "/home/demont93/Projects/push-swap/push_swap.o"
+  },
+  {
+    "arguments": [
+      "/home/demont93/.local/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g3",
+      "-I..",
+      "-I../libft/include",
+      "-c",
+      "-o",
+      "../map.o",
+      "../map.c"
+    ],
+    "directory": "/home/demont93/Projects/push-swap/tests",
+    "file": "/home/demont93/Projects/push-swap/map.c",
+    "output": "/home/demont93/Projects/push-swap/map.o"
   }
 ]
