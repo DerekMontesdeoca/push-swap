@@ -6,45 +6,79 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 01:28:34 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/06 04:47:59 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/08 14:46:50 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdint.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdbool.h>
 #include "libft/libft.h"
+#include "map.h"
 #include "push_swap.h"
+#include "solution.h"
 
-void	push_swap(t_stacks *stacks, int size);
+static bool	parse_numbers(
+		t_map *map,
+		char **args,
+		size_t size,
+		int32_t *numbers_out
+) {
+	long long			lln;
+	size_t				i;
+	char				*endptr;
+
+	i = 0;
+	while (i < size)
+	{
+		lln = strtoll(args[i], &endptr, 10);
+		if (*endptr != '\0' || lln > INT32_MAX || lln < INT32_MIN)
+		{
+			ft_fprintf(STDERR_FILENO, "number out of int32 range\n");
+			return (false);
+		}
+		if (map_insert(map, lln, 1) != MAP_INSERT_OK)
+		{
+			ft_fprintf(STDERR_FILENO, "duplicate number %d\n", (int)lln);
+			return (false);
+		}
+		numbers_out[i] = lln;
+		++i;
+	}
+	return (true);
+}
 
 int main(int argc, char **argv)
 {
-	t_intlist	*node_arr;
-	t_stacks	stacks;
-	bool		err;
+	t_push_swap	push_swap;
+	int32_t		*numbers;
+	t_map		map;
+	bool		ok;
 
 	if (argc == 1)
 		return (ft_printf("\n"), 0);
-	err = false;
-	node_arr = malloc(sizeof(t_intlist[argc - 1]));
-	if (node_arr == NULL)
-		err = true;
-	if (node_arr != NULL)
+	ok = false;
+	numbers = malloc(sizeof(int32_t[argc - 1]));
+	ok = map_make(&map, argc - 1);
+	if (numbers != NULL && ok)
 	{
-		err = !make_stacks(argc - 1, &argv[1], node_arr, &stacks);
-		if (!err)
-			push_swap(&stacks, argc - 1);
-		free(node_arr);
+		ok = false;
+		if (parse_numbers(&map, argv + 1, argc - 1, numbers))
+			if (push_swap_make(&push_swap, numbers, argc - 1))
+			{
+				if (split_then_insert(&push_swap))
+				{
+					if (push_swap_print_ops(&push_swap))
+						ok = true;
+				}
+				push_swap_destroy_contents(&push_swap);
+			}
 	}
-	if (err)
-		ft_printf("Error\n");
-	return (0);
-}
-
-void	push_swap(t_stacks *stacks, int size)
-{
-	/* stacks_print(&stacks->a, &stacks->b); */
-	f(&stacks->a, &stacks->b, size, true);
-	/* stacks_print(&stacks->a, &stacks->b); */
+	free(numbers);
+	map_destroy_contents(&map);
+	if (ok)
+		return (EXIT_SUCCESS);
+	else
+		return (EXIT_FAILURE);
 }

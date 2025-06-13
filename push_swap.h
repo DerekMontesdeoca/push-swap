@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 02:52:10 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/29 03:09:03 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/13 15:59:09 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,28 +67,30 @@ bool	push_swap_make(t_push_swap *ps, int	*numbers, size_t size);
 
 void	push_swap_destroy_contents(t_push_swap *ps);
 
-void	push_swap_print(t_push_swap *ps);
+bool	push_swap_print(t_push_swap *ps);
 
-void	push_swap_pa(t_push_swap *ps);
+bool	push_swap_print_ops(t_push_swap *ps);
 
-void	push_swap_pb(t_push_swap *ps);
+bool	push_swap_pa(t_push_swap *ps);
 
-void	push_swap_sa(t_push_swap *ps);
+bool	push_swap_pb(t_push_swap *ps);
 
-void	push_swap_sb(t_push_swap *ps);
+bool	push_swap_sa(t_push_swap *ps);
 
-void	push_swap_ss(t_push_swap *ps);
+bool	push_swap_sb(t_push_swap *ps);
 
-void	push_swap_ra(t_push_swap *ps);
+bool	push_swap_ss(t_push_swap *ps);
 
-void	push_swap_rb(t_push_swap *ps);
+bool	push_swap_ra(t_push_swap *ps);
 
-void	push_swap_rr(t_push_swap *ps);
+bool	push_swap_rb(t_push_swap *ps);
 
-void	push_swap_rra(t_push_swap *ps);
+bool	push_swap_rr(t_push_swap *ps);
 
-void	push_swap_rrb(t_push_swap *ps);
+bool	push_swap_rra(t_push_swap *ps);
 
-void	push_swap_rrr(t_push_swap *ps);
+bool	push_swap_rrb(t_push_swap *ps);
+
+bool	push_swap_rrr(t_push_swap *ps);
 
 #endif

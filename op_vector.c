@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 15:48:13 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/28 04:43:04 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/07 15:00:21 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,9 @@ static bool	resize_strategy(t_op_vector *v)
 	new_data = malloc(sizeof(t_op[new_size]));
 	if (new_data == NULL)
 		return (false);
-	ft_memcpy(new_data, v->data, v->len);
+	ft_memcpy(new_data, v->data, sizeof(t_op[v->len]));
 	free(v->data);
 	v->data = new_data;
+	v->cap = new_size;
 	return (true);
 }

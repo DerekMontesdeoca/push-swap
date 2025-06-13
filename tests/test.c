@@ -20,7 +20,21 @@ static int	comp(int32_t a, int32_t b)
 
 void test_insert_sort_to_a()
 {
+	t_push_swap	ps;
+	int32_t		na[] = {8, 1, 4, 2, 3, 7, 9, 0, 5, 6};
+	t_split_insert si = {.push_swap = &ps};
 
+	assert(push_swap_make(&ps, na, 10));
+	for (size_t i = 0; i < 5; ++i)
+		push_swap_pb(&ps);
+	insert_sort_to_a(&si);
+	t_intlist_node *node = ps.a.head;
+	for (size_t i = 0; i < 10; ++i)
+	{
+		assert(node->data == (int32_t) i);
+		node = node->next;
+	}
+	push_swap_destroy_contents(&ps);
 }
 
 void test_split_to_b()
@@ -269,6 +283,6 @@ int main()
 	test_lis_2();
 	test_array_diff();
 	test_qsort();
-	test_split_insert();
+	test_insert_sort_to_a();
 	return (0);
 }

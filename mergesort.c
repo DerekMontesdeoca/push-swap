@@ -6,12 +6,12 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 18:47:18 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/28 21:27:26 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/13 14:03:17 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "mergesort.h"
+#include <stdbool.h>
 #include "libft/libft.h"
 
 static void	merge(int32_t *dest, int32_t *tmp, size_t start, size_t end);

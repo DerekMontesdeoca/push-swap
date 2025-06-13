@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 02:15:06 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/31 20:56:16 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/07 14:20:06 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "intlist.h"
 #include "push_swap.h"
 
-void	push_swap_pa(t_push_swap *ps)
+bool	push_swap_pa(t_push_swap *ps)
 {
 	t_intlist_node	*node;
 
@@ -23,11 +23,12 @@ void	push_swap_pa(t_push_swap *ps)
 		node = intlist_pop(&ps->b);
 		assert(node != NULL);
 		intlist_insert(&ps->a, node);
-		op_vector_push(&ps->ops, OP_PA);
+		return (op_vector_push(&ps->ops, OP_PA));
 	}
+	return (true);
 }		
 
-void	push_swap_pb(t_push_swap *ps)
+bool	push_swap_pb(t_push_swap *ps)
 {
 	t_intlist_node	*node;
 
@@ -36,6 +37,7 @@ void	push_swap_pb(t_push_swap *ps)
 		node = intlist_pop(&ps->a);
 		assert(node != NULL);
 		intlist_insert(&ps->b, node);
-		op_vector_push(&ps->ops, OP_PB);
+		return (op_vector_push(&ps->ops, OP_PB));
 	}
+	return (true);
 }

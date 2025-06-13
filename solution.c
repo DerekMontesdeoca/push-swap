@@ -6,14 +6,14 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 01:29:40 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/31 16:34:36 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/13 14:48:10 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solution.h"
 #include "array.h"
 #include "push_swap.h"
-#include "split_insert.h"
+#include "solution_internal.h"
 
 bool	split_then_insert(t_push_swap *ps)
 {
