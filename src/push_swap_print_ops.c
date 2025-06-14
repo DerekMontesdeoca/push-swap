@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 14:00:39 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 19:12:08 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 23:08:50 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,10 @@ bool	push_swap_print_ops(t_push_swap *ps)
 
 	ok = false;
 	buf = malloc(ps->ops.len * sizeof(char [4]) + sizeof(char));
-	if (buf == NULL)
-		ft_printf("malloc: allocation error\n");
-	else
+	if (buf != NULL)
 	{
 		strjoin(buf, &ps->ops);
-		if (ft_printf("%s", buf) < 0)
-			ft_fprintf(STDERR_FILENO, "printf: error printing\n");
-		else
+		if (ft_printf("%s", buf) >= 0)
 			ok = true;
 		free(buf);
 	}

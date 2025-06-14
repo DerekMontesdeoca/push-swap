@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 02:46:24 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 19:13:11 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 23:09:25 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,5 @@ bool	push_swap_print(t_push_swap *ps)
 		++i;
 	}
 	ok &= print_footer();
-	if (!ok)
-		ft_fprintf(STDERR_FILENO, "print error\n");
 	return (ok);
 }
