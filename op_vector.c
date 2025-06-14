@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 15:48:13 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/07 15:00:21 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:14:44 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ bool	op_vector_push(t_op_vector *v, t_op op)
 
 t_op	op_vector_at(t_op_vector *v, size_t index)
 {
-	return v->data[index];
+	return (v->data[index]);
 }
 
 size_t	op_vector_len(t_op_vector *v)
 {
-	return v->len;
+	return (v->len);
 }
 
 size_t	op_vector_cap(t_op_vector *v)
 {
-	return v->cap;
+	return (v->cap);
 }
 
 static bool	resize_strategy(t_op_vector *v)
@@ -48,7 +48,7 @@ static bool	resize_strategy(t_op_vector *v)
 	if (v->cap == 0)
 		new_size = 1;
 	else
-		new_size = v->cap *  2;
+		new_size = v->cap * 2;
 	new_data = malloc(sizeof(t_op[new_size]));
 	if (new_data == NULL)
 		return (false);

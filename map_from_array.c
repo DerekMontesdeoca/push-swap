@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 20:15:15 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/30 20:28:45 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:17:31 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ bool	map_from_array(int32_t *arr, size_t size, t_map *map_out)
 			if (map_insert(map_out, arr[i], 0) == MAP_INSERT_FULL)
 			{
 				ok = false;
-				break;
+				break ;
 			}
 			++i;
 		}

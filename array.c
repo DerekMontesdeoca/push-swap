@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:30:25 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/30 21:05:23 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:43:21 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 static bool	fill_map(t_map *map, t_int_array *arr);
 static void	subtract( t_int_array *minuend, t_map *subtrahend, t_map *result);
 
-bool int_array_diff(
-		t_int_array *minuend,
-		t_int_array *subtrahend,
-		t_map *out
+bool	int_array_diff(
+	t_int_array *minuend,
+	t_int_array *subtrahend,
+	t_map *out
 ) {
 	t_map	subtrahend_map;
 	bool	ok;
@@ -69,9 +69,8 @@ static bool	fill_map(t_map *map, t_int_array *arr)
 	int32_t	*value;
 
 	i = 0;
-	while(i < arr->size)
+	while (i < arr->size)
 	{
-
 		value = map_upsert(map, arr->arr[i], 0);
 		if (value == NULL)
 			return (false);

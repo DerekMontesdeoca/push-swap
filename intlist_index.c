@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 01:38:06 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 12:14:37 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:27:28 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ size_t	intlist_sorted_insert_index(t_intlist *lst, int32_t value)
 	while (i < lst->len)
 	{
 		if (node->data > value && node->prev->data < value)
-			break;
+			break ;
 		if (node->data < node->prev->data
-				&& (value < node->data || value > node->prev->data))
-			break;
+			&& (value < node->data || value > node->prev->data))
+			break ;
 		node = node->next;
 		++i;
 	}

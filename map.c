@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:15:17 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/31 04:54:37 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 18:46:59 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 #include "libft/libft.h"
 #include "algo.h"
 
-/**
- * Capacity must be a multiple of 2.
- */
 bool	map_make(t_map *m, size_t cap)
 {
 	size_t	pow2_cap;

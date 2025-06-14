@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 02:41:50 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/08 14:03:58 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:29:20 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	*max(void *arr, size_t nmemb, size_t size, t_cmp_func cmp)
 	max = arr;
 	b_arr = arr;
 	i = 1;
-	while(i < nmemb)
+	while (i < nmemb)
 	{
 		if (cmp(max, b_arr + size * i) < 0)
 			max = b_arr + size * i;
@@ -56,7 +56,7 @@ void	*min(void *arr, size_t nmemb, size_t size, t_cmp_func cmp)
 	min = arr;
 	b_arr = arr;
 	i = 1;
-	while(i < nmemb)
+	while (i < nmemb)
 	{
 		if (cmp(min, b_arr + size * i) > 0)
 			min = b_arr + size * i;

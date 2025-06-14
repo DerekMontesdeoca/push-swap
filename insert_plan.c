@@ -6,21 +6,21 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 21:06:09 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/13 14:46:50 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:28:57 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <assert.h>
 #include "solution_internal.h"
 
-static t_insert_plan calculate_insert_plan(
+static t_insert_plan	calculate_insert_plan(
 	size_t index_a,
 	size_t len_a,
 	size_t index_b,
 	size_t len_b
 ) {
 	t_insert_plan					insert_plan;
-	t_circular_distances 			distances_a;
+	t_circular_distances			distances_a;
 	t_circular_distances			distances_b;
 	t_distance_combination_index	combination_type;
 
@@ -52,15 +52,15 @@ void	insert_plan_make(t_insert_plan *ip, t_push_swap *push_swap)
 	while (i < push_swap->b.len)
 	{
 		insert_index_a = intlist_sorted_insert_index(
-			&push_swap->a,
-			node_b->data
-		);
+				&push_swap->a,
+				node_b->data
+				);
 		current_plan = calculate_insert_plan(
 				insert_index_a,
 				push_swap->a.len,
 				i,
 				push_swap->b.len
-		);
+				);
 		if (i == 0 || insert_plan_moves(&current_plan) < insert_plan_moves(ip))
 			*ip = current_plan;
 		node_b = node_b->next;

@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 01:28:34 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 01:38:57 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:17:52 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "push_swap.h"
 #include "solution.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_push_swap	push_swap;
 	int32_t		*numbers;

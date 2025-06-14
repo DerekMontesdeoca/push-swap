@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 21:25:25 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/31 19:11:27 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:30:30 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,18 @@ bool	circular_lis(
 	int32_t **data_out,
 	size_t *size_out
 ) {
-	int32_t 	*double_arr;
-	int32_t 	**lis_arr;
+	int32_t		*double_arr;
+	int32_t		**lis_arr;
 	t_int_array	result;
-	bool	ok;
+	bool		ok;
 
 	ok = false;
-	double_arr = malloc(sizeof(int32_t[size * 2]));
-	lis_arr = ft_calloc(size, sizeof(int32_t*));
+	double_arr = malloc(sizeof(int32_t [size * 2]));
+	lis_arr = ft_calloc(size, sizeof(int32_t *));
 	if (double_arr != NULL && lis_arr != NULL)
 	{
 		ft_mempcpy(ft_mempcpy(double_arr, arr, sizeof(int32_t[size])),
-				arr, sizeof(int32_t[size]));
+			arr, sizeof(int32_t[size]));
 		if (max_lis(double_arr, lis_arr, size, &result))
 		{
 			*data_out = result.arr;

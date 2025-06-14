@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 02:46:24 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/13 22:08:37 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:13:11 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ static bool	print_header(void)
 	ok &= ft_printf("\n") >= 0;
 	ok &= ft_printf("            |-------------|-------------|\n") >= 0;
 	ok &= ft_printf(
-		"            | %s | %s |\n", "     A     ", "     B     "
-	) >= 0;
+			"            | %s | %s |\n", "     A     ", "     B     "
+			) >= 0;
 	ok &= ft_printf("            |-------------|-------------|\n") >= 0;
 	return (ok);
 }
@@ -90,4 +90,3 @@ bool	push_swap_print(t_push_swap *ps)
 		ft_fprintf(STDERR_FILENO, "print error\n");
 	return (ok);
 }
-

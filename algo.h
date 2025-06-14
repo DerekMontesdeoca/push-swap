@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 03:38:32 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/13 15:19:48 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:31:49 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,32 +39,37 @@ typedef struct s_lis
 /**
  * Longest increasing subsequence algorithm using patience sorting.
  */
-bool	lis(int32_t *arr, size_t size, int32_t **data_out, size_t *size_out);
+bool		lis(
+				int32_t *arr,
+				size_t size,
+				int32_t **data_out,
+				size_t *size_out
+				);
 
 /**
  * LIS on a circular array. See Longest increasing subsequence.
  */
-bool	circular_lis(
-			int32_t *arr,
-			size_t size,
-			int32_t **data_out,
-			size_t *size_out
-			);
+bool		circular_lis(
+				int32_t *arr,
+				size_t size,
+				int32_t **data_out,
+				size_t *size_out
+				);
 
 /**
  * Lower bound binary search.
  */
-int32_t	*lower_bound(int32_t *arr, size_t size, int32_t elem);
+int32_t		*lower_bound(int32_t *arr, size_t size, int32_t elem);
 
 /**
  * Lower bound binary search of indices.
  */
-size_t	*lower_bound_idx(
-			size_t *indices,
-			int32_t *data,
-			size_t size,
-			int32_t elem
-			);
+size_t		*lower_bound_idx(
+				size_t *indices,
+				int32_t *data,
+				size_t size,
+				int32_t elem
+				);
 
 /**
  * Simple and fast non-cryptographic hash function for uint32_t.

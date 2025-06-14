@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 02:16:15 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 12:14:46 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:09:20 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ bool	check_solution(t_push_swap *push_swap, bool *result)
 	{
 		line = get_next_line(STDIN_FILENO);
 		if (line == NULL)
-			break;
+			break ;
 		else
 		{
 			ok = op_from_string(&op, line);
@@ -34,7 +34,7 @@ bool	check_solution(t_push_swap *push_swap, bool *result)
 			free(line);
 		}
 		if (!ok)
-			break;
+			break ;
 	}
 	if (ok)
 		*result = intlist_is_sorted(push_swap->a) && push_swap->b.len == 0;

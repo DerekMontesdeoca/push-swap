@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 06:07:32 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/30 19:09:44 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:26:56 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ static bool	lis_compute(t_lis *state, int32_t **data_out, size_t *size_out)
 	i = 0;
 	while (i < state->cap)
 	{
-		insert_index = lower_bound_idx(state->tails, state->data, state->len, state->data[i])
-			- state->tails;
+		insert_index = lower_bound_idx(state->tails, state->data, state->len,
+				state->data[i]) - state->tails;
 		state->tails[insert_index] = i;
 		if (insert_index == 0)
 			state->indices[i] = -1;

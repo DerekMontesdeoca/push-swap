@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 05:05:45 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/31 16:02:56 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:11:48 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	quicksort(int32_t *arr, size_t size, int (*cmp)(int32_t, int32_t))
 		while (cmp(arr[j], pivot) > 0)
 			--j;
 		if (i >= j)
-			break;
+			break ;
 		swap(&arr[i], &arr[j]);
 	}
 	quicksort(arr, i, cmp);

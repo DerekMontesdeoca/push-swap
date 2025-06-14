@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:45:54 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/27 18:46:29 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:16:00 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@
 const char	*op_to_string(t_op op)
 {
 	if (op == OP_PA)
-		return "pa";
+		return ("pa");
 	if (op == OP_PB)
-		return "pb";
+		return ("pb");
 	if (op == OP_RA)
-		return "ra";
+		return ("ra");
 	if (op == OP_RB)
-		return "rb";
+		return ("rb");
 	if (op == OP_RR)
-		return "rr";
+		return ("rr");
 	if (op == OP_RRR)
-		return "rrr";
+		return ("rrr");
 	if (op == OP_RRA)
-		return "rra";
+		return ("rra");
 	if (op == OP_RRB)
-		return "rrb";
+		return ("rrb");
 	if (op == OP_SA)
-		return "sa";
+		return ("sa");
 	if (op == OP_SB)
-		return "sb";
+		return ("sb");
 	if (op == OP_SS)
-		return "ss";
+		return ("ss");
 	assert(false && "Unreachable code");
 }
