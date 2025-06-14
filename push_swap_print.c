@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 02:46:24 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/13 16:10:47 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/13 22:08:37 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ static bool	print_header(void)
 	return (ok);
 }
 
-[[nodiscard]] bool	push_swap_print(t_push_swap *ps)
+__attribute__((warn_unused_result))
+bool	push_swap_print(t_push_swap *ps)
 {
 	size_t			i;
 	t_intlist_node	*ptr_a;

@@ -184,12 +184,12 @@
       "-Ilibft/include",
       "-c",
       "-o",
-      "intlist_sorted_index.o",
-      "intlist_sorted_index.c"
+      "intlist_index.o",
+      "intlist_index.c"
     ],
     "directory": "/home/demont93/Projects/push-swap",
-    "file": "/home/demont93/Projects/push-swap/intlist_sorted_index.c",
-    "output": "/home/demont93/Projects/push-swap/intlist_sorted_index.o"
+    "file": "/home/demont93/Projects/push-swap/intlist_index.c",
+    "output": "/home/demont93/Projects/push-swap/intlist_index.o"
   },
   {
     "arguments": [
@@ -446,6 +446,38 @@
     "directory": "/home/demont93/Projects/push-swap",
     "file": "/home/demont93/Projects/push-swap/split_insert.c",
     "output": "/home/demont93/Projects/push-swap/split_insert.o"
+  },
+  {
+    "arguments": [
+      "/home/demont93/.local/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Ilibft/include",
+      "-c",
+      "-o",
+      "push_swap_print_ops.o",
+      "push_swap_print_ops.c"
+    ],
+    "directory": "/home/demont93/Projects/push-swap",
+    "file": "/home/demont93/Projects/push-swap/push_swap_print_ops.c",
+    "output": "/home/demont93/Projects/push-swap/push_swap_print_ops.o"
+  },
+  {
+    "arguments": [
+      "/home/demont93/.local/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Ilibft/include",
+      "-c",
+      "-o",
+      "op_vector_destroy.o",
+      "op_vector_destroy.c"
+    ],
+    "directory": "/home/demont93/Projects/push-swap",
+    "file": "/home/demont93/Projects/push-swap/op_vector_destroy.c",
+    "output": "/home/demont93/Projects/push-swap/op_vector_destroy.o"
   },
   {
     "arguments": [

@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:02:55 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/05/30 20:28:42 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/13 22:40:57 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ typedef struct s_map
 }	t_map;
 
 /**
- * Capacity must be a multiple of 2.
+ * Creates a map, silently increasing the capacity of cap to the next nearest
+ * power of 2.
  */
 bool				map_make(t_map *m, size_t cap);
 

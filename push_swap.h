@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 02:52:10 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/13 15:59:09 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/13 22:26:30 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,10 @@ bool	push_swap_rra(t_push_swap *ps);
 bool	push_swap_rrb(t_push_swap *ps);
 
 bool	push_swap_rrr(t_push_swap *ps);
+
+/**
+ * Parse an array of int32_t from an array of string.
+ */
+int32_t	*parse_numbers(char **strs, size_t size);
 
 #endif
