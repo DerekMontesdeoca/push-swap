@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 02:16:15 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 19:09:20 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 22:36:41 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ bool	check_solution(t_push_swap *push_swap, bool *result)
 	t_op		op;
 	bool		ok;
 
+	ok = true;
 	while (true)
 	{
 		line = get_next_line(STDIN_FILENO);

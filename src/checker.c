@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 22:16:51 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 19:43:42 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 22:37:10 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 static inline int	fail(void)
 {
-	return (ft_printf("KO\n") < 0);
+	return (ft_printf("KO\n") >= 0);
 }
 
 static inline int	succeed(void)
 {
-	return (ft_printf("OK\n") < 0);
+	return (ft_printf("OK\n") >= 0);
 }
 
 static bool	run_checker(char **args, size_t size)

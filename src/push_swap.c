@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:15:32 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 19:01:17 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 20:53:40 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,31 @@ void	push_swap_destroy_contents(t_push_swap *ps)
 	op_vector_destroy_contents(&ps->ops);
 	map_destroy_contents(&ps->indices);
 	*ps = (t_push_swap){};
+}
+
+bool	push_swap_run_op(t_push_swap *ps, t_op op)
+{
+	if (op == OP_PA)
+		return (push_swap_pa(ps));
+	if (op == OP_PB)
+		return (push_swap_pb(ps));
+	if (op == OP_RA)
+		return (push_swap_ra(ps));
+	if (op == OP_RB)
+		return (push_swap_rb(ps));
+	if (op == OP_RR)
+		return (push_swap_rr(ps));
+	if (op == OP_RRA)
+		return (push_swap_rra(ps));
+	if (op == OP_RRB)
+		return (push_swap_rrb(ps));
+	if (op == OP_RRR)
+		return (push_swap_rrr(ps));
+	if (op == OP_SA)
+		return (push_swap_sa(ps));
+	if (op == OP_SB)
+		return (push_swap_sb(ps));
+	if (op == OP_SS)
+		return (push_swap_ss(ps));
+	assert(false && "Unreachable code");
 }
