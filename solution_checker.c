@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 02:16:15 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 02:37:12 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 12:14:46 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,10 @@
 #include "libft/libft.h"
 #include "checker.h"
 
-bool	parse_command(char *line, t_command *command);
-
-bool	run_command(t_push_swap *push_swap, t_command *command);
-
-bool	intlist_is_sorted(t_intlist *lst);
-
 bool	check_solution(t_push_swap *push_swap, bool *result)
 {
 	char		*line;
-	t_command	command;
+	t_op		op;
 	bool		ok;
 
 	while (true)
@@ -34,15 +28,15 @@ bool	check_solution(t_push_swap *push_swap, bool *result)
 			break;
 		else
 		{
-			ok = parse_command(line, &command);
+			ok = op_from_string(&op, line);
 			if (ok)
-				ok = run_command(push_swap, &command);
+				ok = push_swap_run_op(push_swap, op);
 			free(line);
 		}
 		if (!ok)
 			break;
 	}
 	if (ok)
-		*result = intlist_is_sorted(&push_swap->a) && push_swap->b.len == 0;
+		*result = intlist_is_sorted(push_swap->a) && push_swap->b.len == 0;
 	return (ok);
 }

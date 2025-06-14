@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 01:38:06 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/08 14:45:58 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 12:14:37 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,17 @@ bool	intlist_index(t_intlist *lst, int32_t value, size_t *index_out)
 		++i;
 	}
 	return (false);
+}
+
+bool	intlist_is_sorted(t_intlist lst)
+{
+	if (lst.len <= 1)
+		return (true);
+	while (--lst.len)
+	{
+		if (lst.head->data > lst.head->next->data)
+			return (false);
+		lst.head = lst.head->next;
+	}
+	return (true);
 }

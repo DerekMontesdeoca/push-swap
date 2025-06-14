@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 21:04:44 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/07 04:14:19 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 12:14:36 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ t_intlist_node	*intlist_pop(t_intlist *lst);
 size_t			intlist_sorted_insert_index(t_intlist *lst, int32_t value);
 
 bool			intlist_index(t_intlist *lst, int32_t value, size_t *index_out);
+
+bool			intlist_is_sorted(t_intlist lst);
 
 #endif

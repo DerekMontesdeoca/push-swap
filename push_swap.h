@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 02:52:10 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/13 22:26:30 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 02:52:23 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef enum e_op
 }	t_op;
 
 const char	*op_to_string(t_op op);
+
+bool		op_from_string(t_op *op, char *str);
 
 typedef struct s_op_vector
 {
@@ -92,6 +94,8 @@ bool	push_swap_rra(t_push_swap *ps);
 bool	push_swap_rrb(t_push_swap *ps);
 
 bool	push_swap_rrr(t_push_swap *ps);
+
+bool	push_swap_run_op(t_push_swap *ps, t_op op);
 
 /**
  * Parse an array of int32_t from an array of string.
