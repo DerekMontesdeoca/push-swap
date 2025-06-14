@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 01:28:34 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 19:17:52 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/14 23:02:12 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ int	main(int argc, char **argv)
 	if (ok)
 		return (EXIT_SUCCESS);
 	else
-		return (EXIT_FAILURE);
+		return (ft_fprintf(STDERR_FILENO, "Error\n"), EXIT_FAILURE);
 }
