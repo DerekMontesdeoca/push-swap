@@ -15,8 +15,24 @@ HEADERS := ../intlist.h ../mergesort.h ../push_swap.h ../map.h ../algo.h \
 		   ../ cmp.h ../insert_plan.h
 LIBFT := ../libft/libft.a
 
+VENV := .venv
+PYTHON := $(VENV)/bin/python3
+PIP := $(VENV)/bin/pip
+
+EXECUTABLE := ../src/push_swap
 
 all: $(NAME)
+
+integration_tests: $(PYTHON) $(EXECUTABLE)
+	$(MAKE) -C ../src
+	. $(VENV)/bin/activate && pytest
+
+$(PYTHON):
+	python3 -m venv $(VENV)
+	$(PIP) install -r requirements.txt
+
+$(EXECUTABLE):
+	$(MAKE) -C ..
 
 $(NAME): $(OBJS) $(LIBFT)
 	$(CC) -o $@ $^
