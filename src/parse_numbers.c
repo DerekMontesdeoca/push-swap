@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 22:26:41 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 19:13:31 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/06/15 19:26:43 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,33 +24,47 @@ static inline bool	ft_isspace(char c)
 		|| c == '\r');
 }
 
+static bool	parse_strtol_digits(
+	const char *ptr,
+	bool is_negative,
+	long long *n_out
+) {
+	unsigned long long	cutoff;
+	unsigned long long	n_lim;
+	unsigned long long	n;
+
+	cutoff = LLONG_MAX;
+	if (is_negative)
+		cutoff = -(unsigned long long)LLONG_MIN;
+	n_lim = cutoff % 10;
+	cutoff /= 10;
+	n = 0;
+	while (*ptr != '\0')
+	{
+		if (!ft_isdigit(*ptr))
+			return (false);
+		if (n > cutoff
+			|| (n == cutoff && (unsigned long long)(*ptr - '0') > n_lim))
+			return (false);
+		n = n * 10 + (*(ptr++) - '0');
+	}
+	if (is_negative)
+		*n_out = -n;
+	else
+		*n_out = n;
+	return (true);
+}
+
 static bool	ft_strtoll10(const char *ptr, long long *n_out)
 {
 	bool				is_negative;
-	long long			n_lim;
-	unsigned long long	cutoff;
 
 	is_negative = false;
 	while (ft_isspace(*ptr))
 		++ptr;
 	if (*ptr == '+' || *ptr == '-')
 		is_negative = *(ptr++);
-	cutoff = LLONG_MAX;
-	if (is_negative)
-		cutoff = -(unsigned long long)LLONG_MIN;
-	n_lim = cutoff % 10;
-	cutoff /= 10;
-	*n_out = 0;
-	while (*ptr != '\0')
-	{
-		if (!ft_isdigit(*ptr))
-			return (false);
-		if (*n_out > (long long)cutoff
-			|| (*n_out == (long long)cutoff && *ptr - '0' > n_lim))
-			return (false);
-		*n_out = *n_out * 10 + (*(ptr++) - '0');
-	}
-	return (true);
+	return (parse_strtol_digits(ptr, is_negative, n_out));
 }
 
 static bool	parse_numbers_inner(
