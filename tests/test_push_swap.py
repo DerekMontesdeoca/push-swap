@@ -1,7 +1,5 @@
-import pytest
 import random
-import subprocess
-from subprocess import run, Popen
+from subprocess import run
 
 PUSH_SWAP = '../src/push_swap'
 
@@ -14,6 +12,8 @@ def test_simple():
 def test_100_nums_is_lt_700():
     for _ in range(50):
         lst = [str(random.randint(-(2**31), 2**31-1)) for _ in range(100)]
+        if (len(set(lst)) != len(lst)):
+            continue
         lst.insert(0, PUSH_SWAP)
         result = run(lst, text=True, capture_output=True)
         assert(result.returncode == 0)
@@ -24,6 +24,8 @@ def test_100_nums_is_lt_700():
 def test_500_nums_is_lt_5500():
     for _ in range(50):
         lst = [str(random.randint(-(2**31), 2**31-1)) for _ in range(500)]
+        if (len(set(lst)) != len(lst)):
+            continue
         lst.insert(0, PUSH_SWAP)
         result = run(lst, text=True, capture_output=True)
         assert(result.returncode == 0)
@@ -76,6 +78,8 @@ def test_against_checker():
             str(random.randint(-(2**31), 2**31-1)) 
             for _ in range(random.randint(1,500))
         ]
+        if (len(set(lst)) != len(lst)):
+            continue
         print('start')
         print(len(lst))
         for v in lst:
@@ -95,3 +99,8 @@ def test_against_checker():
         assert(r2.stdout == b"OK\n")
 
 
+def test_repeated():
+    result = run([PUSH_SWAP, "234", "234"], capture_output=True)
+    assert(result.returncode == 1)
+    assert(result.stderr == b'Error\n')
+    assert(result.stdout == b'')
