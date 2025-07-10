@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 02:52:10 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 19:42:53 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/07/10 00:01:00 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct s_push_swap
 	t_op_vector		ops;
 	int				*sorted_numbers;
 	t_map			indices;
-	t_intlist_node	*nodes;
+	t_intlist_node	*node_arena;
 	size_t			n_numbers;
 }	t_push_swap;
 

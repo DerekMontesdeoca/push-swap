@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 01:29:40 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/15 19:53:09 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/07/10 03:29:11 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "push_swap.h"
 #include "solution_internal.h"
 
-static void	push_zero_to_top(t_split_insert *si)
+void	push_zero_to_top(t_split_insert *si)
 {
 	size_t					index;
 	t_circular_distances	distances;

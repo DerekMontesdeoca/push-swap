@@ -20,7 +20,7 @@ SRCS := array.c binary_search.c circular_distances.c circular_lis.c cmp.c \
 		push_swap_print.c push_swap_push.c push_swap_rotate.c \
 		push_swap_rrotate.c push_swap_swap.c quicksort.c solution.c \
 		split_insert.c push_swap_print_ops.c op_vector_destroy.c \
-		parse_numbers.c solution_insert_sort_a.c
+		parse_numbers.c solution_insert_sort_a.c solution_easy_sort.c
 
 LIBFT := libft/libft.a
 

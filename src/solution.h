@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 21:43:31 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/13 15:57:56 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/07/10 03:29:41 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@
  * smallest number is put on top of the left stack.
  */
 bool	split_then_insert(t_push_swap *ps);
+
+bool	easy_sort(t_push_swap *ps);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:05:57 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 19:40:13 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/07/10 04:34:32 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ bool							push_non_lis_to_b_and_pivot_split(
 void							insert_sort_to_a(
 									t_split_insert *si
 									);
+
+/**
+ * Put the element 0 at the top of push_swap a.
+ */
+void							push_zero_to_top(t_split_insert *si);
 
 /**
  * Holds the distance to a particular position in a circular data structure.
