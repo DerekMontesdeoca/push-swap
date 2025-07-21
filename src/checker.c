@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 22:16:51 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/14 22:37:10 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/07/21 16:12:15 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 	bool		ok;
 
 	if (argc == 1)
-		ok = succeed();
+		ok = true;
 	else
 		ok = run_checker(argv + 1, argc - 1);
 	if (!ok)
