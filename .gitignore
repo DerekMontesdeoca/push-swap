@@ -7,3 +7,4 @@ __pycache__
 python/.venv
 *egg-info
 tests/.venv
+checker

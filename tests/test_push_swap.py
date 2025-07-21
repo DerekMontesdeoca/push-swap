@@ -6,7 +6,7 @@ PUSH_SWAP = '../src/push_swap'
 def test_simple():
     result = run([PUSH_SWAP, '2', '1', '3'], text=True, capture_output=True);
     assert result.returncode == 0
-    assert result.stdout.count("\n") == 4
+    assert result.stdout.count("\n") <= 2
 
 
 def test_100_nums_is_lt_700():

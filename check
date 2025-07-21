@@ -1,0 +1,21 @@
+#! /usr/bin/env bash
+
+combinations="3 5 100 500"
+for combination in $combinations; do
+    echo comb $combination
+
+    for n_test in {1..100}; do
+        args=$(python3 ../make_numbers.py $combination)
+        moves="$(./push_swap $args)"
+        result=$(./push_swap $args | ./c $args)
+        if [[ "$result" == "KO" ]]; then
+            echo -e "\n\n"
+            echo "KO"
+            echo "with args"
+            echo $args
+            echo "with moves:"
+            printf "%s\n" "$moves"
+        fi
+    done
+done
+

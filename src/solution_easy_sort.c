@@ -6,77 +6,47 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 00:56:37 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/07/10 04:48:46 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:46:10 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "intlist.h"
+#include "push_swap.h"
 #include "solution.h"
-
-static bool	rotate_and_swap(
-		t_push_swap *ps,
-		bool is_sorted,
-		bool should_rotate_up
-) {
-	if (is_sorted)
-	{
-		if (should_rotate_up)
-			return (push_swap_ra(ps));
-		else
-			return (push_swap_rra(ps));
-	}
-	else
-	{
-		if (ps->a.head->next->data == 1)
-		{
-			if (!push_swap_ra(ps))
-				return (false);
-		}
-		else
-			if (!push_swap_rra(ps))
-				return (false);
-		return (push_swap_sa(ps));
-	}
-}
 
 static bool	easy_sort_3(t_push_swap *ps)
 {
-	t_intlist	a_copy;
-	bool		should_rotate_up;
-	bool		is_sorted;
+	int	elems[3];
 
-	a_copy = ps->a;
-	should_rotate_up = ps->a.head->next->data == 0;
-	if (a_copy.head->data != 0)
-	{
-		if (should_rotate_up)
-			intlist_rotate(&a_copy);
-		else
-			intlist_rrotate(&a_copy);
-	}
-	is_sorted = intlist_is_sorted(a_copy);
-	if (!rotate_and_swap(ps, is_sorted, should_rotate_up))
-		return (false);
-	return (true);
+	elems[0] = ps->a.head->data;
+	elems[1] = ps->a.head->next->data;
+	elems[2] = ps->a.head->prev->data;
+	if (elems[0] < elems[1] && elems[0] < elems[2] && elems[1] > elems[2])
+		return (push_swap_rra(ps) && push_swap_sa(ps));
+	else if (elems[0] > elems[1] && elems[0] > elems[2] && elems[1] < elems[2])
+		return (push_swap_ra(ps));
+	else if (elems[0] > elems[1] && elems[0] > elems[2] && elems[1] > elems[2])
+		return (push_swap_sa(ps) && push_swap_rra(ps));
+	else if (elems[0] > elems[1] && elems[0] < elems[2])
+		return (push_swap_sa(ps));
+	else if (elems[0] < elems[1] && elems[0] > elems[2])
+		return (push_swap_rra(ps));
+	else
+		return (true);
 }
 
-static bool	easy_split(t_push_swap *ps)
+static bool	sort_other_5(t_push_swap *ps)
 {
-	if (ps->a.head->data == 0)
-	{
-		if (!push_swap_pb(ps))
+	size_t	i;
+
+	if (!easy_sort_3(ps))
+		return (false);
+	if (ps->b.len > 1 && ps->b.head->data < ps->b.head->next->data)
+		if (!push_swap_sb(ps))
 			return (false);
-		if (ps->b.len > 1)
-			if (!push_swap_rb(ps))
-				return (false);
-	}
-	else if (ps->a.head->data == 1)
-	{
-		if (!push_swap_pb(ps))
-			return (false);
-	}
-	else
-		if (!push_swap_ra(ps))
+	i = ps->b.len;
+	while (i--)
+		if (!push_swap_pa(ps))
 			return (false);
 	return (true);
 }
@@ -84,18 +54,24 @@ static bool	easy_split(t_push_swap *ps)
 static bool	easy_sort_up_to_5(t_push_swap *ps)
 {
 	size_t	i;
+	size_t	to_find;
 
+	to_find = 2;
 	i = ps->n_numbers;
 	while (i--)
-		if (!easy_split(ps))
+	{
+		if (ps->a.head->data == 0 || ps->a.head->data == 1)
+		{
+			if (!push_swap_pb(ps))
+				return (false);
+			if (--to_find == 0)
+				break ;
+			continue ;
+		}
+		if (!push_swap_ra(ps))
 			return (false);
-	if (!easy_sort_3(ps))
-		return (false);
-	i = 2;
-	while (i--)
-		if (!push_swap_pa(ps))
-			return (false);
-	return (true);
+	}
+	return (sort_other_5(ps));
 }
 
 bool	easy_sort(t_push_swap *ps)

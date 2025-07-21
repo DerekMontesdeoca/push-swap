@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 02:07:13 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/06/07 14:21:45 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:22:40 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ bool	push_swap_sb(t_push_swap *ps)
 {
 	intlist_swap(&ps->b);
 	if (ps->b.len >= 2)
-		return (op_vector_push(&ps->ops, OP_SA));
+		return (op_vector_push(&ps->ops, OP_SB));
 	return (true);
 }
 

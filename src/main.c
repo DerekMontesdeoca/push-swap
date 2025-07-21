@@ -6,7 +6,7 @@
 /*   By: dmontesd <dmontesd@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 01:28:34 by dmontesd          #+#    #+#             */
-/*   Updated: 2025/07/10 04:49:05 by dmontesd         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:43:07 by dmontesd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static bool	solution(t_push_swap *push_swap)
 {
 	bool	ok;
 
-	if (push_swap->n_numbers < 12)
+	if (push_swap->n_numbers <= 5)
 		ok = easy_sort(push_swap);
 	else
 		ok = split_then_insert(push_swap);
